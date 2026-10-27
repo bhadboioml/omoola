@@ -1,19 +1,15 @@
 'use client'
 
 import { useState } from 'react'
+import { ValidationError, useForm } from '@formspree/react'
 
 const INQUIRY_TYPES = ['Live Show', 'Festival', 'Private Event', 'Feature / Collab', 'Press', 'Other']
 
 export function BookingForm() {
-  const [submitted, setSubmitted] = useState(false)
+  const [state, handleSubmit] = useForm('xoeedzgj')
   const [type, setType] = useState('Live Show')
 
-  function handleSubmit(e: React.FormEvent) {
-    e.preventDefault()
-    setSubmitted(true)
-  }
-
-  if (submitted) {
+  if (state.succeeded) {
     return (
       <div className="border border-border p-10 text-center">
         <p className="mb-2 text-xs tracking-label text-brand">RECEIVED</p>
@@ -29,6 +25,7 @@ export function BookingForm() {
   return (
     <form onSubmit={handleSubmit} className="flex flex-col gap-8">
       {/* Inquiry type */}
+      <input type="hidden" name="inquiry_type" value={type} />
       <fieldset>
         <legend className="mb-3 text-xs tracking-label text-muted-foreground">
           INQUIRY TYPE
@@ -77,11 +74,16 @@ export function BookingForm() {
         />
       </div>
 
+      <ValidationError
+        errors={state.errors}
+        className="text-sm text-destructive"
+      />
       <button
         type="submit"
-        className="self-start bg-foreground px-8 py-4 text-xs tracking-label text-background transition-colors hover:bg-brand"
+        disabled={state.submitting}
+        className="self-start bg-foreground px-8 py-4 text-xs tracking-label text-background transition-colors hover:bg-brand disabled:cursor-not-allowed disabled:opacity-60"
       >
-        SEND INQUIRY
+        {state.submitting ? 'SENDING...' : 'SEND INQUIRY'}
       </button>
     </form>
   )

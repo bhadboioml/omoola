@@ -4,6 +4,11 @@
   "main": ".open-next/worker.js",
   "compatibility_date": "2026-10-27",
   "compatibility_flags": ["nodejs_compat"],
+  "workers_dev": true,
+  "routes": [
+    "bhadboioml.com/*",
+    "www.bhadboioml.com/*"
+  ],
   "assets": {
     "directory": ".open-next/assets",
     "binding": "ASSETS"

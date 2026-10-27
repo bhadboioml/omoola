@@ -72,14 +72,14 @@ export function SiteFooter() {
       </div>
 
       <div className="mt-4 border-t border-border pt-4 text-center text-xs tracking-label text-muted-foreground">
-        WEBSITE DESIGNED &amp; MANAGED BY{' '}
+        WEBSITE DESIGNED BY ARRIVAL DIGITAL INC. MANAGED BY{' '}
         <a
-          href="https://www.thearrival.ca"
+          href="https://www.vuga.org"
           target="_blank"
           rel="noreferrer"
           className="text-foreground transition-colors hover:text-brand"
         >
-          ARRIVAL DIGITAL INC.
+          VUGA MUSIC INC.
         </a>
       </div>
     </footer>

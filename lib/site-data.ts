@@ -9,9 +9,9 @@ export const NAV_LINKS = [
 ]
 
 export const SOCIALS = [
-  { label: 'INSTAGRAM', href: 'https://instagram.com' },
-  { label: 'X / TWITTER', href: 'https://x.com' },
-  { label: 'TIKTOK', href: 'https://tiktok.com' },
+  { label: 'INSTAGRAM', href: 'https://www.instagram.com/bhadboi_oml?psln=NXYwaG1wY3Myd3dh' },
+  { label: 'X / TWITTER', href: 'https://x.com/bhadboi_oml?s=21' },
+  { label: 'TIKTOK', href: 'https://www.tiktok.com/@bhadboi_oml?_r=1&_t=ZS-9AupzOmmwrM' },
   { label: 'YOUTUBE', href: 'https://www.youtube.com/@bhadboiomlvevo2781' },
 ]
 
